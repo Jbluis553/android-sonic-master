@@ -1,9 +1,11 @@
+// Top-level build file
 buildscript {
     repositories {
         google()
         mavenCentral()
     }
     dependencies {
+        // Esta versión es muy estable para GitHub Actions
         classpath 'com.android.tools.build:gradle:8.1.0'
     }
 }
