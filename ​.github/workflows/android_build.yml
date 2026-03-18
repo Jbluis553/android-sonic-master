@@ -1,0 +1,30 @@
+name: Android CI Build
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout del código
+      uses: actions/checkout@v4
+
+    - name: Configurar Java 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: gradle
+
+    - name: Dar permisos al ejecutable de Gradle
+      run: chmod +x gradlew
+      # Nota: Si no tienes el archivo gradlew aún, el build fallará,
+      # pero esto es normal en la primera fase de setup manual.
+
+    - name: Compilar con Gradle
+      run: ./gradlew assembleDebug
