@@ -6,7 +6,6 @@ pluginManagement {
     }
 }
 dependencyResolutionManagement {
-    // Esto permite que las librerías se definan aquí y no en el build.gradle raíz
     repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
     repositories {
         google()
