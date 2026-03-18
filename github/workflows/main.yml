@@ -1,0 +1,7 @@
+name: Test Build
+on: [push]
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "El sistema de Actions funciona"
